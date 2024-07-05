@@ -1,0 +1,110 @@
+version: "3.1"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+
+- story: book recommendation path
+  steps:
+  - intent: ask_book
+  - action: utter_ask_book_genre
+  - intent: provide_genre
+    entities:
+      - book_genre
+  - action: action_fetch_book_recommendations 
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_book
+  - action: utter_ask_book_genre
+  - intent: provide_genre
+    entities:
+    - book_genre: Fiction
+  - slot_was_set:
+    - book_genre: Fiction
+  - action: action_fetch_book_recommendations
+  - intent: provide_genre
+    entities:
+    - book_genre: Dystopian Fiction
+  - slot_was_set:
+    - book_genre: Dystopian Fiction
+  - action: action_fetch_book_recommendations
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_book
+  - action: utter_ask_book_genre
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_book
+  - action: utter_ask_book_genre
+  - intent: provide_genre
+    entities:
+    - book_genre: Fantasy
+  - slot_was_set:
+    - book_genre: Fantasy
+  - action: action_fetch_book_recommendations
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: provide_genre
+    entities:
+    - book_genre: Fiction
+  - slot_was_set:
+    - book_genre: Fiction
+  - action: action_fetch_book_recommendations
+  - intent: provide_genre
+    entities:
+    - book_genre: Fantasy
+  - slot_was_set:
+    - book_genre: Fantasy
+  - action: action_fetch_book_recommendations
+  - intent: provide_genre
+    entities:
+    - book_genre: Adventure
+  - slot_was_set:
+    - book_genre: Adventure
+  - action: action_fetch_book_recommendations
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_book
+  - action: utter_ask_book_genre
+  - intent: provide_genre
+    entities:
+    - book_genre: Fiction
+  - slot_was_set:
+    - book_genre: Fiction
+  - action: action_fetch_book_recommendations
+
+- story: interactive_story_1
+  steps:
+  - intent: ask_book
+  - action: utter_ask_book_genre
+  - intent: provide_genre
+    entities:
+    - book_genre: Fantasy
+  - slot_was_set:
+    - book_genre: Fantasy
+  - action: action_fetch_book_recommendations

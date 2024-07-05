@@ -1,0 +1,55 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hello
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: ask_book
+  examples: |
+    - I need a book
+    - Can you recommend a book?
+    - Suggest me a book
+    - I want to read a book
+    - Recommend a book for me
+- intent: provide_genre
+  examples: |
+    - I am looking for a [Fiction](book_genre) book
+    - Do you have any [Adventure](book_genre) books?
+    - I prefer [Science Fiction](book_genre) novels
+    - Suggest a [Romance](book_genre) book
+    - I like [Fantasy](book_genre) books
+    - I want to read a [Dystopian Fiction](book_genre)
+    - [Fantasy](book_genre)
+    - I am looking for  a [Fiction](book_genre) book
+    - I am looking for [Fantasy](book_genre) book
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - you are a human

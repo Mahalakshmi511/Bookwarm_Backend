@@ -1,0 +1,33 @@
+version: '3.1'
+intents:
+- ask_book
+- bot_challenge
+- goodbye
+- greet
+- provide_genre
+entities:
+- book_genre
+slots:
+  book_genre:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: book_genre
+responses:
+  utter_greet:
+  - text: Hello and welcome! How may I assist you?
+  utter_goodbye:
+  - text: Enjoy the day Bibiliophile!!
+  utter_ask_book_genre:
+  - text: What kind of book are you looking for?
+  utter_iamabot:
+  - text: I am a bot, powered by KBN College.
+actions:
+- utter_ask_book_genre
+- action_fetch_book_recommendations
+- utter_greet
+- utter_iamabot
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
